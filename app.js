@@ -17,35 +17,17 @@ app.use(express.json());
 //     res.sendFile(__dirname+'/4o4.html');
 //     console.log(res.statusCode);
 // });
-let user=[
-    {
-        'id':1,
-        'name':"ankit1"
-    },
-    {
-        'id':2,
-        'name':"ankit2"
-    },
-    {
-        'id':3,
-        'name':"ankit3"
-    },
-    {
-        'id':4,
-        'name':"ankit4"
-    },
-    
-];
-// app.get('/user',(req,res)=>{
-//     res.send(user);
-// })
-// app.post('/user',(req,res)=>{
-//     console.log(req.body);
-//     res.send({
-//         message:"message recieved",
-//         user:req.body
-//     });
-// })
+let user={};
+app.get('/user',(req,res)=>{
+    res.send(user);
+})
+app.post('/user',(req,res)=>{
+    console.log(req.body);
+    res.json({
+        message:"message recieved",
+        user:req.body
+    });
+})
 
 
 
@@ -84,10 +66,10 @@ let user=[
 
 //                                             with Query 
 
-app.get('/user',(req,res)=>{
-    console.log('user with query :' ,req.query);
-    res.send(req.query);
-})
+// app.get('/user',(req,res)=>{
+//     console.log('user with query :' ,req.query);
+//     res.send(req.query);
+// })
 
 
 
